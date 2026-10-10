@@ -303,10 +303,11 @@ export function Dashboard({ wallet, onSignOut }: { wallet: LocalWallet; onSignOu
       <div className="relative mt-5 flex gap-1.5 rounded-2xl bg-white/[0.04] p-1.5 ring-1 ring-white/[0.08]">
         <div
           className={cn(
-            "absolute top-1.5 bottom-1.5 rounded-xl bg-gradient-to-r transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
+            "absolute top-1.5 bottom-1.5 rounded-xl bg-gradient-to-r transition-all duration-300",
             TABS.find((t) => t.id === activeTab)!.accent
           )}
           style={{
+            transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)",
             width: `calc((100% - ${(TABS.length - 1) * 6}px - 12px) / ${TABS.length})`,
             left: `calc(${TABS.findIndex((t) => t.id === activeTab)} * ((100% - ${(TABS.length - 1) * 6}px - 12px) / ${TABS.length} + 6px) + 6px)`,
           }}
